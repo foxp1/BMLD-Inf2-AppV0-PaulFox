@@ -19,4 +19,6 @@ with st.form("add_form"):
     if submitted:
         st.write("Sum: ", add(number1, number2))
 
+st.write(number1)
+
 st.write("Diese Seite ist eine Unterseite der Startseite.")
