@@ -1,24 +1,13 @@
 import streamlit as st
-from functions.test import add
+from functions.addition import add, subtract
 
-st.title("A + B = C")
+st.title("Addition Rechner")
 
-with st.form("add_form"):
-    st.write("Enter the numbers to add")
+st.write("Mein Rechner für die Addition von zwei Zahlen")
 
+with st.form("addition_form"):
+    a = st.number_input("Zahl A", value=0)
+    b = st.number_input("Zahl B", value=0)
+    submit = st.form_submit_button("Berechnen")
 
-    number1 = st.text_input("Number 1")
-
-
-    number2 = st.slider("Form slider")
-    
-
-    # Every form must have a submit button.
-    submitted = st.form_submit_button("Submit")
-
-    if submitted:
-        st.write("Sum: ", add(number1, number2))
-
-st.write(number1)
-
-st.write("Diese Seite ist eine Unterseite der Startseite.")
+st.write(add(a, b))
